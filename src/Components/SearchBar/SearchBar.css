@@ -2,39 +2,47 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url(https://content.codecademy.com/programs/react/ravenous/background_search_desktop.jpg);
+    background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pineapple-shrimp-horizontal-1530893473.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 25rem;
+    height: 100vh;
+    width: 100vw;
   }
   
   .SearchBar-sort-options ul {
     display: flex;
     justify-content: center;
     margin-bottom: 2.22rem;
-    color: #ffffff;
+    padding: 0;
   }
   
   .SearchBar-sort-options li {
+    display: flex;
     cursor: pointer;
-    width: 4.33rem;
+    width: auto;
     border-bottom: 1px solid #fff;
-    padding: 0 2.58rem .33rem 2.58rem;
+    padding-bottom: .33rem;
     line-height: 1.13;
     text-align: center;
-    font-weight: 600;
-    font-size: .83rem;
-    transition: color .25s;
+    font-weight: 900;
+    font-size: 4.4vh;
+    transition: color .30s;
+    margin: .5em;
+    color: #8850bd;
   }
   
   .SearchBar-sort-options li:hover {
-    color: #d4cfcf;
+    color:#db831a;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0 3px;
+    transition: .25s;
   }
   
   .SearchBar-sort-options li.active,
   .SearchBar-sort-options li.active:hover {
     border-bottom: 1px solid #f0c36c;
-    color: #f0c36c;
+    color: #000000;
   }
   
   .SearchBar-fields {
@@ -44,7 +52,7 @@
   }
   
   .SearchBar-fields input {
-    width: 21rem;
+    width: 40vw;
     padding: .66rem 1rem;
     margin-right: 2.22rem;
     border: 1px solid #fff;
@@ -63,26 +71,26 @@
   
   .SearchBar-submit button {
     border-radius: 4px;
-    padding: .72rem 1.7rem;
-    background-color: #cca353;
+    padding: .25rem; 
+    background-color: #b19892;
     color: #ffffff;
     font-weight: 600;
     transition: background-color .5s;
+    font-size: 3em;
   }
   
   .SearchBar-submit button:hover {
     cursor: pointer;
-    background-color: #a7874b;
+    background-color: #7ea55a;
   }
   
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 660px) {
     .SearchBar {
-      background-image: url('https://content.codecademy.com/programs/react/ravenous/background_search_mobile.jpg');
+      
     }
   
     .SearchBar-sort-options ul {
-      margin-left: 2rem;
-      margin-right: 2rem;
+      font-size: 2vh;
     }
   
     .SearchBar-fields {
@@ -93,5 +101,6 @@
     .SearchBar-fields input {
       margin-right: 0;
       margin-bottom: .86rem;
+      width: 60vw;
     }
   }
