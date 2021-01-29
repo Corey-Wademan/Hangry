@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
-import { Icon, InlineIcon } from '@iconify/react';
+import {Icon, InlineIcon} from '@iconify/react'
 import emojiAngry from '@iconify-icons/bi/emoji-angry';
 import emojiHappy from '@iconify-icons/heroicons-outline/emoji-happy';
 
