@@ -3,12 +3,7 @@ import './BusinessList.css';
 import Business from '../Business/Business';
 
 class BusinessList extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-
-
+ 
   render() {
     return (
       <div className="BusinessList">
