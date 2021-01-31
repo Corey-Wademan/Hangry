@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import BusinessList from '../Business-List/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
 
 import Yelp from '../../util/Yelp';
+import BusinessList from '../Business-List/BusinessList';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +26,8 @@ class App extends React.Component {
         <SearchBar 
           businesses={this.state.businesses} 
           searchYelp={this.searchYelp.bind(this)} />
-        <BusinessList businesses={this.state.businesses} />
+        <BusinessList 
+          businesses={this.state.businesses}/>
       </div>
     );
   }

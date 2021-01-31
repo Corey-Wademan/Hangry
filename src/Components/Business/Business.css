@@ -1,11 +1,18 @@
 .Business {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 16.66rem;
-    margin: 0 .5rem 2.3rem .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 16.66rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: #8a959545 10px solid;
+  transition: .35s;
   }
-  
+  .Business:hover {
+    transform: translateY(-.1rem) scale(1.02);
+
+  }
+   
   .Business .image-container {
     height: 16.66rem;
     margin-bottom: 1rem;
@@ -23,8 +30,8 @@
   }
   
   .Business-information p {
-    font-size: .88rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 1rem;
   }
   
@@ -33,6 +40,7 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
   
   .Business-reviews {
     display: flex;
@@ -42,7 +50,7 @@
   }
   
   .Business-reviews h3 {
-    color: #CCA353;
+    color: #ab3807;
     font-weight: 600;
   }
   
