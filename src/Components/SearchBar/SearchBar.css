@@ -84,9 +84,7 @@
   }
   
   @media only screen and (max-width: 660px) {
-    .SearchBar {
-      
-    }
+    
   
     .SearchBar-sort-options ul {
       font-size: 2vh;
@@ -106,7 +104,6 @@
   .searchQueryDisplay {
     text-align: center;
     font-family: Poppins, sans-serif;
-    padding: 1rem;
     font-size: 3vh;
   }
     .searchQueryDisplay h3 h5 {

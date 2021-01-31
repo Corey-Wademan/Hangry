@@ -18,13 +18,15 @@ class SearchBar extends React.Component {
       sortBy: 'best_match'
     };
 
+    // this.myRef = React.createRef()
+
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSortByChange = this.handleSortByChange.bind(this);
     this.renderFace = this.renderFace.bind(this);
-    // this.renderSortDisplay = this.renderSortDisplay.bind(this)
 
+    
     this.sortByOptions = {
       'Best Match': 'best_match',
       'Highest Rated': 'rating',
@@ -71,17 +73,6 @@ class SearchBar extends React.Component {
     )
   }
 
-  /* renderSortDisplay(option) {
-    switch(option) {
-      case this.state.sortBy ===  'best_match':
-        return <span>best match</span>;
-      case this.state.sortBy === 'rating':
-        return <span>highest rated</span>;
-      case this.state.sortBy === 'review_count':
-        return <span>most reviews</span>;
-    }
-  } */
-
   handleSearch(event) {
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     event.preventDefault();
@@ -108,10 +99,15 @@ class SearchBar extends React.Component {
           <div className="SearchBar-submit">
             <button onClick={this.handleSearch}><span class="iconify" data-icon="iwwa:search" data-inline="false"></span></button>
           </div>
+         {/* <>
+            {this.props.businesses.length > 0 &&
+              <span ref={this.myRef} href='#BusinessList' className='smooth-goto iconify'adata-icon="ph:arrow-fat-line-down-fill" data-inline="false"></span>
+            }
+          </> */}
         </div>
         { this.props.businesses.length > 0 &&
         <div className="searchQueryDisplay">
-          <h3>Displaying <span>{this.state.term}</span> results around <span>{this.state.location}</span></h3> 
+          <h3>Displaying <span>{this.state.term}</span> results near <span>{this.state.location}</span></h3> 
           <h5>Sorted by: (
             { this.state.sortBy === 'best_match' && <span>Best Match</span>}
             { this.state.sortBy === 'rating' && <span>Highest Rated</span>}
