@@ -111,7 +111,7 @@ class SearchBar extends React.Component {
         </div>
         { this.props.businesses.length > 0 &&
         <div className="searchQueryDisplay">
-          <h3>Displaying {this.state.term} results around {this.state.location}</h3> 
+          <h3>Displaying <span>{this.state.term}</span> results around <span>{this.state.location}</span></h3> 
           <h5>Sorted by: (
             { this.state.sortBy === 'best_match' && <span>Best Match</span>}
             { this.state.sortBy === 'rating' && <span>Highest Rated</span>}
