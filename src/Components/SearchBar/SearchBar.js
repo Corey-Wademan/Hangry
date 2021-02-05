@@ -15,16 +15,23 @@ class SearchBar extends React.Component {
     this.state = {
       term: '',
       location: '',
-      sortBy: 'best_match'
+      sortBy: 'best_match',
+      scrolled: false
     };
-
-    // this.myRef = React.createRef()
+    
+    // refs
+    this.searchHeader = React.createRef();
+    this.searchFields = React.createRef();
+    this.submitSearch = React.createRef();
+    // refs-end
 
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSortByChange = this.handleSortByChange.bind(this);
     this.renderFace = this.renderFace.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.renderScrollNav = this.renderScrollNav.bind(this);
 
     
     this.sortByOptions = {
@@ -72,10 +79,40 @@ class SearchBar extends React.Component {
       : <h1>Hangry <InlineIcon icon={emojiHappy} /></h1>
     )
   }
+  
+  handleScroll(){
+    let scrollValue = window.scrollY;
+    if (scrollValue > 800) {
+      this.setState({scrolled: true});
+    } else 
+        this.setState({scrolled: false})
+  }
+
+  renderScrollNav() {
+    if (this.state.scrolled) {
+      return (
+        <div className='scroll-header'>
+          <div className="scroll-fields ">
+            <input required placeholder="Search Businesses or Food" onChange={this.handleTermChange} />
+            <input required placeholder="Where?" onChange={this.handleLocationChange}/>
+          </div>
+          <div className="scroll-submit">
+            <button onClick={this.handleSearch}>
+              <span class="iconify" data-icon="iwwa:search" data-inline="false"></span>
+            </button>
+          </div>
+        </div>
+      )
+    }
+  }
 
   handleSearch(event) {
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     event.preventDefault();
+  }
+
+  componentDidMount(){
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   componentDidUpdate(){
@@ -85,25 +122,20 @@ class SearchBar extends React.Component {
   render() {
     return (
       <>
-        <div className="SearchBar">
-          {this.renderFace()} 
+        <div ref={this.searchHeader} className='SearchBar'>
+          {!this.state.scrolled && this.renderFace()} 
           <div className="SearchBar-sort-options">
             <ul>
               {this.renderSortByOptions()}
             </ul>
           </div>
-          <div className="SearchBar-fields">
+          <div ref={this.searchFields} className="SearchBar-fields ">
             <input required placeholder="Search Businesses or Food" onChange={this.handleTermChange} />
             <input required placeholder="Where?" onChange={this.handleLocationChange}/>
           </div>
-          <div className="SearchBar-submit">
+          <div ref={this.submitSearch} className="SearchBar-submit">
             <button onClick={this.handleSearch}><span class="iconify" data-icon="iwwa:search" data-inline="false"></span></button>
           </div>
-         {/* <>
-            {this.props.businesses.length > 0 &&
-              <span ref={this.myRef} href='#BusinessList' className='smooth-goto iconify'adata-icon="ph:arrow-fat-line-down-fill" data-inline="false"></span>
-            }
-          </> */}
         </div>
         { this.props.businesses.length > 0 &&
         <div className="searchQueryDisplay">
@@ -115,8 +147,8 @@ class SearchBar extends React.Component {
             )</h5>
         </div>
         }
+        {this.renderScrollNav()}
       </>
-
     );
   };
 };
