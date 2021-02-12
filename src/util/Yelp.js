@@ -5,7 +5,7 @@ const Yelp = {
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,
-          Access-Control-Access-Origin: '*'
+          'Access-Control-Access-Origin': '*'
         }
       }).then(response => {
         return response.json();
