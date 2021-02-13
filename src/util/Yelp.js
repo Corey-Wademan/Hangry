@@ -1,10 +1,10 @@
-const exposed = `XSFHjevajVmJP_XNjgTWi7Yh9FUrD5z8i1wPDpjLbSM0nCXAtk5VKCzMnJT5BhylqZJfxqqVbFywGtaOS_4OiLvSPPVtoOE_lximq3t72x0oJv6f89lS3ApF7QEmYHYx`
+const nugget = `XSFHjevajVmJP_XNjgTWi7Yh9FUrD5z8i1wPDpjLbSM0nCXAtk5VKCzMnJT5BhylqZJfxqqVbFywGtaOS_4OiLvSPPVtoOE_lximq3t72x0oJv6f89lS3ApF7QEmYHYx`
 const Yelp = {
     search(term, location, sortBy) {
-      return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, 
+      return fetch(`https://corsanywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, 
       {
         headers: {
-          Authorization: `Bearer ${exposed}`,
+          Authorization: `Bearer ${nugget}`,
           "Content-type": "application/json",
         }
       }).then(response => {
