@@ -1,11 +1,22 @@
 .Business {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 16.66rem;
-    margin: 0 .5rem 2.3rem .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 13.6rem;
+  height: 25rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: #8a959545 10px solid;
+  border-radius: 10px;
+  transition: .35s;
+  background-color: lavender;
   }
-  
+  .Business:hover {
+    transform: translateY(-.1rem) scale(1.02);
+    background-color: #b19892;
+    box-shadow: 2px 2px 12px 10px #0000008c;
+  }
+   
   .Business .image-container {
     height: 16.66rem;
     margin-bottom: 1rem;
@@ -23,8 +34,8 @@
   }
   
   .Business-information p {
-    font-size: .88rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 1rem;
   }
   
@@ -33,17 +44,20 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
   
   .Business-reviews {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: right;
+    margin: 0 .8rem;
   }
   
   .Business-reviews h3 {
-    color: #CCA353;
+    color: #ab3807;
     font-weight: 600;
+    font-size: 1.1rem;
   }
   
   .Business-reviews .rating {
