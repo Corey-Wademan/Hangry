@@ -1,0 +1,8 @@
+.BusinessList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1.4rem 0;
+  padding: 4rem 0;
+  background-color: #abb4b6;
+} 
