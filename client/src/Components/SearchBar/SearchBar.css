@@ -1,6 +1,6 @@
 .SearchBar {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     justify-content: center;
     background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pineapple-shrimp-horizontal-1530893473.jpg);
     background-size: cover;

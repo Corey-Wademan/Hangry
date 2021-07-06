@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
       sortBy: 'best_match',
       scrolled: false
     };
-    
+     
     // refs
     this.searchHeader = React.createRef();
     this.searchFields = React.createRef();
@@ -98,7 +98,7 @@ class SearchBar extends React.Component {
           </div>
           <div className="scroll-submit">
             <button onClick={this.handleSearch}>
-              <span class="iconify" data-icon="iwwa:search" data-inline="false"></span>
+              <span className="iconify" data-icon="iwwa:search" data-inline="false"></span>
             </button>
           </div>
         </div>
@@ -134,7 +134,7 @@ class SearchBar extends React.Component {
             <input required placeholder="Where?" onChange={this.handleLocationChange}/>
           </div>
           <div ref={this.submitSearch} className="SearchBar-submit">
-            <button onClick={this.handleSearch}><span class="iconify" data-icon="iwwa:search" data-inline="false"></span></button>
+            <button onClick={this.handleSearch}><span className="iconify" data-icon="iwwa:search" data-inline="false"></span></button>
           </div>
         </div>
         { this.props.businesses.length > 0 &&
