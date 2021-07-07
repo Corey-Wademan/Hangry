@@ -32,19 +32,12 @@ app.get('/search/:term/:location/:sort_by', (req, res) => {
 	})
 });
 
-/* 
-if (response) {
-				return response.map(business => ({
-					id: business.id,
-					imageSrc: business.image_url,
-					name: business.name,
-					address: business.location.address1,
-					city: business.location.city,
-					state: business.location.state,
-					zipCode: business.location.zip_code,
-					category: business.categories[0].title,
-					rating: business.rating,
-					reviewCount: business.review_count
-			}))
-		}
-*/
+// Serves Statics when app is in production
+if(process.env.NODE_ENV === 'production') {
+	// Set static folder
+	app.use(express.static('client/build'))
+
+	app.get('*', (req, res) => {
+			res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	})
+}
